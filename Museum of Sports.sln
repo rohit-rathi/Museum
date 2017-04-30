@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Museum of Sports", "Assembly-CSharp-firstpass.csproj", "{09F4D994-95C9-6105-342B-98DE5EBC0703}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Museum of Sports", "Assembly-CSharp.csproj", "{43984EFF-D97F-AC0D-A7B9-875C5CE53174}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Museum of Sports", "Assembly-CSharp-Editor.csproj", "{25BB9675-B1A8-0C84-4D59-2D7E11DE2AA8}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09F4D994-95C9-6105-342B-98DE5EBC0703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09F4D994-95C9-6105-342B-98DE5EBC0703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09F4D994-95C9-6105-342B-98DE5EBC0703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09F4D994-95C9-6105-342B-98DE5EBC0703}.Release|Any CPU.Build.0 = Release|Any CPU
 		{43984EFF-D97F-AC0D-A7B9-875C5CE53174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{43984EFF-D97F-AC0D-A7B9-875C5CE53174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43984EFF-D97F-AC0D-A7B9-875C5CE53174}.Release|Any CPU.ActiveCfg = Release|Any CPU

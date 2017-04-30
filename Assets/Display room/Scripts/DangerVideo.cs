@@ -10,27 +10,42 @@ public class DangerVideo : MonoBehaviour {
 
 	public MovieTexture movie;
 	private AudioSource audio;
+	private static bool isPlaying = false;
+	private GameObject light;
 
 	// Use this for initialization
 	void Start () {
 		GetComponent<RawImage> ().texture = movie as MovieTexture;
 		audio = GetComponent<AudioSource> ();
 		audio.clip = movie.audioClip;
-		movie.Play ();
-		audio.Play ();
+		light = GameObject.Find ("Directional light");
 
 	}
 
-	// Update is called once per frame
-	void Update () {
-
-		if (Input.GetKeyDown (KeyCode.Space) && movie.isPlaying) {
-			movie.Pause ();
-		}
-
-		if (Input.GetKeyDown (KeyCode.Space) && !movie.isPlaying) {
+	public void changeStatusOfMovie ()
+	{
+		if (!isPlaying) {
+			TurnLightOff (light);
 			movie.Play ();
+			audio.Play ();
+			isPlaying = true;
+			Invoke ("IsVideoPlayingFalse", audio.clip.length);
 		}
+	}
 
+	private void IsVideoPlayingFalse() {
+		isPlaying = false;
+	}
+
+	public static bool IsVideoPlaying () {
+		return isPlaying;
+	}
+
+	public static void TurnLightOff(GameObject light){
+		light.SetActive(false);
+	}
+
+	public static void TurnLightOn(GameObject light) {
+		light.SetActive(true);
 	}
 }
