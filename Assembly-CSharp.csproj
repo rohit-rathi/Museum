@@ -96,6 +96,13 @@
      <Compile Include="Assets\GoogleVR\Scripts\UI\IGvrGazeResponder.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrFPS.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrIntent.cs" />
+     <Compile Include="Assets\Workout GYM\BallSpawner.cs" />
+     <Compile Include="Assets\Workout GYM\DetectScoring.cs" />
+     <Compile Include="Assets\Workout GYM\GoalTrigger.cs" />
+     <Compile Include="Assets\Workout GYM\ScoreDisplay.cs" />
+     <Compile Include="Assets\Workout GYM\ScoreKeeper.cs" />
+     <Compile Include="Assets\Workout GYM\SecondaryTrigger.cs" />
+     <Compile Include="Assets\Workout GYM\TimeRemainingDisplay.cs" />
      <Compile Include="Assets\Workout GYM\Workoutgym\VideoPlay.cs" />
      <None Include="Assets\GoogleVR\Distortion\GvrDistortion.cginc" />
      <None Include="Assets\Display room\Shaders\Lamp metal.shader" />

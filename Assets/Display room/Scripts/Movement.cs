@@ -32,6 +32,7 @@ public class Movement : MonoBehaviour {
 		player.transform.position = StartPosition.transform.position;
 		player.transform.Rotate (0, 180, 0, Space.World);
 		light = GameObject.Find ("Directional light");
+		// instantiate a canvas infront of you saying start game
 	}
 	
 	// Update is called once per frame
@@ -86,5 +87,9 @@ public class Movement : MonoBehaviour {
 
 	public void LoadGymScene() {
 		SceneManager.LoadScene ("WorkoutGYM");
+	}
+
+	public void LoadBasketballScene() {
+		SceneManager.LoadScene ("BasketBall");
 	}
 }
