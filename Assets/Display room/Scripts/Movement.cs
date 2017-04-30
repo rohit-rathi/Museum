@@ -23,6 +23,7 @@ public class Movement : MonoBehaviour {
 	public GameObject HealthProblemCanas;
 	public GameObject EnterGymCanvas;
 	public GameObject DisplayIntroCanvas;
+	public GameObject PlayBasketballCanvas;
 
 	private GameObject light;
 
@@ -74,10 +75,12 @@ public class Movement : MonoBehaviour {
 			iTween.MoveTo (player, PositionFiveCanvas.transform.position, 1.5f);
 			EnableComponents.MakeCanvasDisappear(HoloFitCanvas);
 			PlayVideo.TurnLightOn (light);
+			EnableComponents.MakeCanvasAppear (PlayBasketballCanvas);
 		}
 	}
 
 	public void MoveToEnd() {
+		EnableComponents.MakeCanvasDisappear (PlayBasketballCanvas);
 		iTween.MoveTo (player, EndPosition.transform.position, 1.5f);
 	}
 

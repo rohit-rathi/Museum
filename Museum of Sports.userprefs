@@ -2,11 +2,11 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Display room/Scripts/Movement.cs">
     <Files>
-      <File FileName="Assets/Plugins/Pixelplacement/iTween/iTween.cs" Line="1" Column="1" />
-      <File FileName="Assets/Display room/Scripts/Movement.cs" Line="56" Column="35" />
-      <File FileName="Assets/Display room/Scripts/DangerVideo.cs" Line="22" Column="37" />
-      <File FileName="Assets/Display room/Scripts/PlayVideo.cs" Line="26" Column="1" />
-      <File FileName="Assets/GoogleVR/Scripts/GvrViewer.cs" Line="30" Column="1" />
+      <File FileName="Assets/Display room/Scripts/Movement.cs" Line="83" Column="34" />
+      <File FileName="Assets/Display room/Scripts/DangerVideo.cs" Line="14" Column="1" />
+      <File FileName="Assets/Display room/Scripts/PlayVideo.cs" Line="31" Column="53" />
+      <File FileName="Assets/Display room/Scripts/EnableComponents.cs" Line="7" Column="37" />
+      <File FileName="Assets/Display room/Scripts/PlayAudio.cs" Line="18" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
