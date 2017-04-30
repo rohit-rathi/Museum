@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnableComponents : MonoBehaviour {
 
-	public static void MakeHoloFitCanvasAppear(GameObject canvas) {
+	public static void MakeCanvasAppear(GameObject canvas) {
 		canvas.SetActive (true);
 	}
 
-	public static void MakeHoloFitCanvasDisappear(GameObject canvas) {
+	public static void MakeCanvasDisappear(GameObject canvas) {
 		canvas.SetActive (false);
 	}
 }

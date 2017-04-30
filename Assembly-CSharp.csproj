@@ -49,6 +49,7 @@
      <Compile Include="Assets\Display room\Scripts\DangerVideo.cs" />
      <Compile Include="Assets\Display room\Scripts\EnableComponents.cs" />
      <Compile Include="Assets\Display room\Scripts\Movement.cs" />
+     <Compile Include="Assets\Display room\Scripts\PlayAudio.cs" />
      <Compile Include="Assets\Display room\Scripts\PlayVideo.cs" />
      <Compile Include="Assets\GoogleVR\DemoScenes\ControllerDemo\ControllerDebugInfo.cs" />
      <Compile Include="Assets\GoogleVR\DemoScenes\ControllerDemo\ControllerDemoManager.cs" />

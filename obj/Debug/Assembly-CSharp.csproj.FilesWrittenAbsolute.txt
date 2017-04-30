@@ -18,3 +18,7 @@
 /Users/Robrocop/Desktop/Rohit/VR/Museum of Sports/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/Robrocop/Desktop/Rohit/VR/Museum of Sports/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/Robrocop/Desktop/Rohit/VR/Museum of Sports/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/Robrocop/Desktop/Rohit/VR/Museum of Sports/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/Robrocop/Desktop/Rohit/VR/Museum of Sports/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/Robrocop/Desktop/Rohit/VR/Museum of Sports/obj/Debug/Assembly-CSharp.dll
+/Users/Robrocop/Desktop/Rohit/VR/Museum of Sports/obj/Debug/Assembly-CSharp.dll.mdb

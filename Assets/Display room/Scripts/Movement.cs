@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Movement : MonoBehaviour {
 
@@ -16,8 +18,11 @@ public class Movement : MonoBehaviour {
 
 	public GameObject player;
 
+	// the various canvasses used
 	public GameObject HoloFitCanvas;
 	public GameObject HealthProblemCanas;
+	public GameObject EnterGymCanvas;
+	public GameObject DisplayIntroCanvas;
 
 	private GameObject light;
 
@@ -35,40 +40,48 @@ public class Movement : MonoBehaviour {
 
 	public void MoveToFirstCanvas() {
 		iTween.MoveTo (player, PositionOneCanvas.transform.position, 1.5f);
+		EnableComponents.MakeCanvasAppear (DisplayIntroCanvas);
+
 	}
 
 	public void MoveToSecondCanvas() {
 		iTween.MoveTo (player, PositionTwoCanvas.transform.position, 1.5f);
-		EnableComponents.MakeHoloFitCanvasAppear (HealthProblemCanas);
-
+		EnableComponents.MakeCanvasAppear (HealthProblemCanas);
+		EnableComponents.MakeCanvasDisappear(DisplayIntroCanvas);
 	}
 
 	public void MoveToThirdCanvas() {
 		if (!DangerVideo.IsVideoPlaying()) {
 			iTween.MoveTo (player, PositionThreeCanvas.transform.position, 1.5f);
-			EnableComponents.MakeHoloFitCanvasDisappear(HealthProblemCanas);
+			EnableComponents.MakeCanvasDisappear(HealthProblemCanas);
 			DangerVideo.TurnLightOn (light);
+			EnableComponents.MakeCanvasAppear (EnterGymCanvas);
 		}
 	}
 
 	public void MoveToThirdHalfCanvas() {
 		iTween.MoveTo (player, CanvasThreeHalfPosition.transform.position, 1.5f);
+		EnableComponents.MakeCanvasDisappear (EnterGymCanvas);
 	}
 		
 	public void MoveToFourthCanvas() {
 		iTween.MoveTo (player, PositionFourCanvas.transform.position, 1.5f);
-		EnableComponents.MakeHoloFitCanvasAppear (HoloFitCanvas);
+		EnableComponents.MakeCanvasAppear (HoloFitCanvas);
 	}
 
 	public void MoveToFifthCanvas() {
 		if (!PlayVideo.IsVideoPlaying()) {
 			iTween.MoveTo (player, PositionFiveCanvas.transform.position, 1.5f);
-			EnableComponents.MakeHoloFitCanvasDisappear(HoloFitCanvas);
+			EnableComponents.MakeCanvasDisappear(HoloFitCanvas);
 			PlayVideo.TurnLightOn (light);
 		}
 	}
 
 	public void MoveToEnd() {
 		iTween.MoveTo (player, EndPosition.transform.position, 1.5f);
+	}
+
+	public void LoadGymScene() {
+		SceneManager.LoadScene ("WorkoutGYM");
 	}
 }
