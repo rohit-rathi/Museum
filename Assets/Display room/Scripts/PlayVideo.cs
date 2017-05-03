@@ -34,6 +34,7 @@ public class PlayVideo : MonoBehaviour {
 
 	private void IsVideoPlayingFalse() {
 		isPlaying = false;
+		TurnLightOn (light);
 	}
 
 	public static bool IsVideoPlaying () {

@@ -13,9 +13,9 @@ public class PlayAudio : MonoBehaviour {
 	void Start () {
 		soundSource.clip = soundFiles [0];
 		soundSource.Play ();
-		Invoke ("LoadMuseumScene", soundSource.clip.length);
+		Invoke ("LoadMuseumScene", soundSource.clip.length + 3);
 	}
-		
+				
 	public void LoadMuseumScene() {
 		SceneManager.LoadScene ("Scene");
 	}

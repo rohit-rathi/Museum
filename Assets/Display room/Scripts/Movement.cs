@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour {
 		if (!DangerVideo.IsVideoPlaying()) {
 			iTween.MoveTo (player, PositionThreeCanvas.transform.position, 1.5f);
 			EnableComponents.MakeCanvasDisappear(HealthProblemCanas);
-			DangerVideo.TurnLightOn (light);
+			//DangerVideo.TurnLightOn (light);
 			EnableComponents.MakeCanvasAppear (EnterGymCanvas);
 		}
 	}
@@ -75,7 +75,7 @@ public class Movement : MonoBehaviour {
 		if (!PlayVideo.IsVideoPlaying()) {
 			iTween.MoveTo (player, PositionFiveCanvas.transform.position, 1.5f);
 			EnableComponents.MakeCanvasDisappear(HoloFitCanvas);
-			PlayVideo.TurnLightOn (light);
+			//PlayVideo.TurnLightOn (light);
 			EnableComponents.MakeCanvasAppear (PlayBasketballCanvas);
 		}
 	}

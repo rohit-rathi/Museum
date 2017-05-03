@@ -35,6 +35,7 @@ public class DangerVideo : MonoBehaviour {
 
 	private void IsVideoPlayingFalse() {
 		isPlaying = false;
+		TurnLightOn (light);
 	}
 
 	public static bool IsVideoPlaying () {
