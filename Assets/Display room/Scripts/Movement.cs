@@ -24,26 +24,40 @@ public class Movement : MonoBehaviour {
 	public GameObject EnterGymCanvas;
 	public GameObject DisplayIntroCanvas;
 	public GameObject PlayBasketballCanvas;
+	public GameObject MoveToThreeHalfCanvas;
+	public GameObject MoveToFour;
+	public GameObject StartTourCanvas;
+	public GameObject WhatThisIsAboutCanvas;
+	public GameObject ResetTourCanvas;
 
-	private GameObject light;
+	public PersistantObject determinePositionOfCamera;
 
 	// Use this for initialization
 	void Start () {
-		player.transform.position = StartPosition.transform.position;
-		player.transform.Rotate (0, 180, 0, Space.World);
-		light = GameObject.Find ("Directional light");
-		// instantiate a canvas infront of you saying start game
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		if (determinePositionOfCamera.GetCount () == 0) {
+			EnableComponents.MakeCanvasAppear (StartTourCanvas);
+			player.transform.position = StartPosition.transform.position;
+			determinePositionOfCamera.IncrementCount ();
+		} 
+
+		else if (determinePositionOfCamera.GetCount () == 1) {
+			player.transform.position = PositionThreeCanvas.transform.position;
+			player.transform.eulerAngles = new Vector3 (0, -180, 0);
+			EnableComponents.MakeCanvasAppear (MoveToThreeHalfCanvas);
+			determinePositionOfCamera.IncrementCount ();
+		} 
+
+		else {
+			EnableComponents.MakeCanvasAppear (ResetTourCanvas);
+			player.transform.position = PositionFiveCanvas.transform.position;
+		}		
+		DontDestroyOnLoad(determinePositionOfCamera);
 	}
 
 	public void MoveToFirstCanvas() {
 		iTween.MoveTo (player, PositionOneCanvas.transform.position, 1.5f);
 		EnableComponents.MakeCanvasAppear (DisplayIntroCanvas);
-
+		EnableComponents.MakeCanvasDisappear (StartTourCanvas);
 	}
 
 	public void MoveToSecondCanvas() {
@@ -56,26 +70,28 @@ public class Movement : MonoBehaviour {
 		if (!DangerVideo.IsVideoPlaying()) {
 			iTween.MoveTo (player, PositionThreeCanvas.transform.position, 1.5f);
 			EnableComponents.MakeCanvasDisappear(HealthProblemCanas);
-			//DangerVideo.TurnLightOn (light);
 			EnableComponents.MakeCanvasAppear (EnterGymCanvas);
 		}
 	}
 
 	public void MoveToThirdHalfCanvas() {
 		iTween.MoveTo (player, CanvasThreeHalfPosition.transform.position, 1.5f);
-		EnableComponents.MakeCanvasDisappear (EnterGymCanvas);
+		EnableComponents.MakeCanvasDisappear (MoveToThreeHalfCanvas);
+		EnableComponents.MakeCanvasAppear (MoveToFour);
+
 	}
 		
 	public void MoveToFourthCanvas() {
 		iTween.MoveTo (player, PositionFourCanvas.transform.position, 1.5f);
 		EnableComponents.MakeCanvasAppear (HoloFitCanvas);
+		EnableComponents.MakeCanvasDisappear(MoveToFour);
+
 	}
 
 	public void MoveToFifthCanvas() {
 		if (!PlayVideo.IsVideoPlaying()) {
 			iTween.MoveTo (player, PositionFiveCanvas.transform.position, 1.5f);
 			EnableComponents.MakeCanvasDisappear(HoloFitCanvas);
-			//PlayVideo.TurnLightOn (light);
 			EnableComponents.MakeCanvasAppear (PlayBasketballCanvas);
 		}
 	}
@@ -86,10 +102,23 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void LoadGymScene() {
+		EnableComponents.MakeCanvasDisappear (EnterGymCanvas);
 		SceneManager.LoadScene ("WorkoutGYM");
 	}
 
 	public void LoadBasketballScene() {
 		SceneManager.LoadScene ("BasketBall");
+	}
+
+	public void DisplayWhatThisIsAboutCanvas() {
+		EnableComponents.MakeCanvasAppear (WhatThisIsAboutCanvas);
+	}
+
+	public void ResetTour() {
+		EnableComponents.MakeCanvasAppear (StartTourCanvas);
+		player.transform.position = StartPosition.transform.position;		
+		EnableComponents.MakeCanvasDisappear (ResetTourCanvas);
+		PersistantObject po = FindObjectOfType<PersistantObject> ();
+		po.SetCountToOne ();
 	}
 }
